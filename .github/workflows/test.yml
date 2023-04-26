@@ -5,7 +5,7 @@ on: push
 jobs:
   deployment:
     runs-on: ubuntu-latest
-    environment: ${{ vars.dev }}
+    environment: dev
     steps:
       - name: Show Branch
         run: echo ${{ github.ref_name	}}
