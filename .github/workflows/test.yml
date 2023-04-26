@@ -1,6 +1,6 @@
 name: test
 
-env: ${{ fromJSON('{"FAVORITE_FRUIT": "APPLE", "FAVORITE_COLOR": "BLUE"}') }}
+# env:
 
 on:
   pull_request:
@@ -17,14 +17,16 @@ jobs:
       - name: Show Environment
         run: echo ${{ github.event_name == 'pull_request' && 'pull_request' || github.ref_name }}
 
+      - name: Push Context
+        run: |
+          echo '${{ toJSON(vars) }}' | jq -r '. | to_entries | .[] | .key + "=" + (.value | @sh)' >> $GITHUB_ENV
+
       - name: Show ENV Variables
-        run: |
-          echo $PROJECT_OWNER
+        run: env
 
-      - name: Debug
-        env:
-          VARS_CONTEXT: ${{ toJSON(vars) }}
-        run: |
-          echo ${{ vars.PROJECT_ENVIRONMENT	}}
-          echo '${{ toJSON(vars) }}'
-
+      # - name: Debug
+      #   env:
+      #     VARS_CONTEXT: ${{ toJSON(vars) }}
+      #   run: |
+      #     echo ${{ vars.PROJECT_ENVIRONMENT	}}
+      #     echo '${{ toJSON(vars) }}'
