@@ -7,5 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ github.GITHUB_BASE_REF	}}
     steps:
+      - name: Show Branch
+        run: echo ${{ github.GITHUB_BASE_REF	}}
       - name: Show ENV Variables
-        run: env | grep PROJECT | sort
+        run: env | sort
