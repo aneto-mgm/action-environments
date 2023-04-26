@@ -1,7 +1,6 @@
 name: test
 
-# env:
-#   VARS_CONTEXT: ${{ toJSON(vars) }}
+env: ${{ toJSON(vars) }}
 
 on:
   pull_request:
