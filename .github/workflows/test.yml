@@ -10,10 +10,10 @@ on:
 jobs:
   deployment:
     runs-on: ubuntu-latest
-    environment: ${{ github.ref_name || 'default' }}
+    environment: ${{ github.event_name == 'pull_request' && 'default' || github.ref_name }}
     steps:
-      - name: Show Branch
-        run: echo ${{ github.ref_name	}}
+      - name: Show Environment
+        run: echo ${{ github.event_name == 'pull_request' && 'default' || github.ref_name }}
 
       - name: Show ENV Variables
         run: env | sort
