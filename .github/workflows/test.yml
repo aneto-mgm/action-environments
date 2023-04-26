@@ -1,0 +1,11 @@
+name: test
+
+on: push
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    environment: ${{ github.GITHUB_BASE_REF	}}
+    steps:
+      - name: Show ENV Variables
+        run: env | grep PROJECT | sort
