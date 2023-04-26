@@ -1,5 +1,7 @@
 name: test
 
+env: ${{ toJSON(vars) }}
+
 on:
   pull_request:
   push:
@@ -10,10 +12,10 @@ on:
 jobs:
   deployment:
     runs-on: ubuntu-latest
-    environment: ${{ github.event_name == 'pull_request' && 'default' || github.ref_name }}
+    environment: ${{ github.event_name == 'pull_request' && 'pull_request' || github.ref_name }}
     steps:
       - name: Show Environment
-        run: echo ${{ github.event_name == 'pull_request' && 'default' || github.ref_name }}
+        run: echo ${{ github.event_name == 'pull_request' && 'pull_request' || github.ref_name }}
 
       - name: Show ENV Variables
         run: env | sort
