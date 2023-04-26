@@ -5,7 +5,7 @@ on: push
 jobs:
   deployment:
     runs-on: ubuntu-latest
-    environment: dev
+    environment: ${{ github.ref_name	}}
     steps:
       - name: Show Branch
         run: echo ${{ github.ref_name	}}
@@ -14,4 +14,6 @@ jobs:
         run: env | sort
 
       - name: Debug
-        run: echo ${{ vars.PROJECT_ENVIRONMENT	}}
+        run: |
+          echo ${{ vars.PROJECT_ENVIRONMENT	}}
+          echo ${{ vars	}}
