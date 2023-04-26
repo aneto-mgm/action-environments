@@ -18,7 +18,9 @@ jobs:
         run: echo ${{ github.event_name == 'pull_request' && 'pull_request' || github.ref_name }}
 
       - name: Show ENV Variables
-        run: env | sort
+        run: |
+          env | sort
+          echo $PROJECT_OWNER
 
       - name: Debug
         env:
