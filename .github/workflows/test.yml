@@ -9,5 +9,9 @@ jobs:
     steps:
       - name: Show Branch
         run: echo ${{ github.ref_name	}}
+
       - name: Show ENV Variables
         run: env | sort
+
+      - name: Debug
+        run: echo ${{ vars.PROJECT_ENVIRONMENT	}}
