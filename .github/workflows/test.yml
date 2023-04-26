@@ -10,4 +10,4 @@ jobs:
       - name: Show Branch
         run: echo ${{ github.ref_name	}}
       - name: Show ENV Variables
-        run: env | sort | grep PROJECT
+        run: env | sort
