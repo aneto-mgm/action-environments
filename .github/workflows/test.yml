@@ -17,3 +17,5 @@ jobs:
         run: |
           echo ${{ vars.PROJECT_ENVIRONMENT	}}
           echo ${{ vars	}}
+          echo ${{ toJson(github) }}
+          echo ${{ toJson(vars) }}
