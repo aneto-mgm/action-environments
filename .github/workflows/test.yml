@@ -1,7 +1,7 @@
 name: test
 
-env:
-  VARS_CONTEXT: ${{ toJSON(vars) }}
+# env:
+#   VARS_CONTEXT: ${{ toJSON(vars) }}
 
 on:
   pull_request:
@@ -20,7 +20,6 @@ jobs:
 
       - name: Show ENV Variables
         run: |
-          env | sort
           echo $PROJECT_OWNER
 
       - name: Debug
