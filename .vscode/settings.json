@@ -1,0 +1,5 @@
+{
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-action.json": "file:///home/aneto/Repositories/github.com/aneto-mgm/action-environments/.github/workflows/test.yml"
+  }
+}

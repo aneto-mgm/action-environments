@@ -1,6 +1,6 @@
 name: test
 
-env: [{"ANETO": "YEP"}]
+env: ${{ fromJSON('{"FAVORITE_FRUIT": "APPLE", "FAVORITE_COLOR": "BLUE"}') }}
 
 on:
   pull_request:
