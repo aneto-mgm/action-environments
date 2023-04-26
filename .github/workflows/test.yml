@@ -10,7 +10,7 @@ on:
 jobs:
   deployment:
     runs-on: ubuntu-latest
-    environment: ${{ github.ref_name || "default"	}}
+    environment: ${{ github.ref_name || 'default' }}
     steps:
       - name: Show Branch
         run: echo ${{ github.ref_name	}}
