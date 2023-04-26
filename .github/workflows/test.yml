@@ -1,6 +1,6 @@
 name: test
 
-env: ${{ toJSON(vars) }}
+# env: ${{ toJSON(vars) }}
 
 on:
   pull_request:
