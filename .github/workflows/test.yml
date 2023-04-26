@@ -18,6 +18,5 @@ jobs:
           VARS_CONTEXT: ${{ toJSON(vars) }}
         run: |
           echo ${{ vars.PROJECT_ENVIRONMENT	}}
-          echo $VARS_CONTEXT
-          # echo ${{ toJson(github) }}
-          # echo ${{ toJson(vars) }}
+          echo ${{ toJSON(vars) }}
+
