@@ -1,6 +1,6 @@
 name: test
 
-env: ${{ [toJSON(vars)] }}
+env: [{"ANETO": "YEP"}]
 
 on:
   pull_request:
